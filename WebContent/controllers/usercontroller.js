@@ -1,7 +1,7 @@
 /**
  * 
  */
-app.controller('UserController',function($scope,$location,UserService){
+app.controller('UserController',function($scope,$rootScope,$location,UserService){
 	$scope.registerUser=function(user){ 
 		UserService.registerUser(user).then(
 		function(response){
@@ -16,8 +16,7 @@ app.controller('UserController',function($scope,$location,UserService){
 		console.log('UserController -> login')
 		console.log(user)
 		UserService.login(user).then(function(response){
-			console.log('success')
-			console.log(response.data)
+			$rootScope.loggedInUser=response.data
 			$location.path('/home')
 		},function(response){
 			console.log('error')
