@@ -12,6 +12,7 @@ app.controller('UserController',function($scope,$rootScope,$location,UserService
 			$scope.error=response.data
 		})
 		
+		
 	}
 	$scope.login=function(user){
 		console.log('UserController -> login')
