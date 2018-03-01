@@ -54,6 +54,8 @@ data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Job<b class="
 data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Blog<b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li><a href="#/addblog">Add Blog</a></li>
+<li><a href="#/blogsnotapproved" ng-show="loggedInUser.role=='ADMIN'">Blogs waiting for approval</a></li>
+<li><a href="#/blogsapproved">Blogs</a></li>
 </ul></li>
 
 <li><a href="#" ng-show="loggedInUser.firstName!=undefined">Welcome {{loggedInUser.firstName}}&nbsp;{{loggedInUser.lastName}}</a></li>
@@ -80,4 +82,6 @@ data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Blog<b class=
   <script type="text/javascript" src="services/jobservice.js"></script>
   <script type="text/javascript" src="controllers/blogcontroller.js"></script>
   <script type="text/javascript" src="services/blogservice.js"></script>
+  <script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
+
 </html>

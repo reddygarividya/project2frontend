@@ -29,6 +29,22 @@ app.config(function($routeProvider){
 		templateUrl:'views/blogform.html',
 		controller:'BlogPostController'
 	})
+	.when('/blogsnotapproved',{
+		templateUrl:'views/blogsnotapproved.html',
+		controller:'BlogPostController'
+	})
+	.when('/blogsapproved',{
+		templateUrl:'views/blogsapproved.html',
+		controller:'BlogPostController'
+	})
+	.when('/getblog/:id',{
+		templateUrl:'views/blogdetails.html',
+		controller:'BlogDetailsController'
+	})
+	.when('/getblognotapproved/:id',{
+		templateUrl:'views/blogapprovalform.html',
+		controller:'BlogDetailsController'
+	})
 	
 	.otherwise({
 		templateUrl:'views/home.html'
