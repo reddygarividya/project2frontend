@@ -5,6 +5,10 @@
 <b>Posted By:</b>{{blog.postedBy.firstName}}&nbsp;{{blog.postedBy.lastName}}
 </div>
 <div class="panel-body">
-<p ng-bind-html="content"></p>
+<p ng-bind-html="content"></p><br>
+<div>
+<a><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" 
+ng-click="updateLikes(blog.id)"></span></a> {{blog.likes}} likes
+</div>
 </div>
 </div>
