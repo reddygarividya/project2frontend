@@ -30,5 +30,12 @@ blogService.addBlog=function(blog) {
 	 blogService.updateLikes=function(id) {
 		 return $http.put("http://localhost:8081/project2backend/updatelikes/"+id);
 	 }
+	 blogService.addComment=function(blogComment){
+		    return $http.post("http://localhost:8081/project2backend/addcomment",blogComment)
+		    }
+
+		blogService.getBlogComments=function(id){
+		    return $http.get("http://localhost:8081/project2backend/blogcomments/"+id)
+		    }
 	return blogService;
 })
