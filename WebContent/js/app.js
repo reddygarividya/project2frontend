@@ -56,11 +56,16 @@ app.config(function($routeProvider){
 	.when('/uploadprofilepic',{
 		templateUrl:'views/uploadprofilepic.html'
 	})
+	.when('/suggestedusers',{
+		templateUrl:'views/suggestedusers.html',
+		controller:'FriendController'
+	})
 	
 	
 	
 	.otherwise({
-		templateUrl:'views/home.html'
+		templateUrl:'views/home.html',
+			controller:'NotificationController'
 	})
 })
 	app.run(function($rootScope,$location,UserService,$cookieStore){
