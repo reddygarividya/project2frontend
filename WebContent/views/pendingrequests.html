@@ -1,0 +1,19 @@
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Friend Requests</b>
+</div>
+<div class="panel-body">
+<ul style="list-style:none">
+<li ng-repeat="request in pendingRequests">
+<b>{{request.fromId.email}}</b><br>
+<b>{{request.fromId.firstName}} &nbsp; {{request.fromId.lastName}}</b><br>
+<b>{{request.fromId.phonenumber}}</b><br>
+<img src="http://localhost:8181/project2backend/getimage/{{user.email}}" alt="No image" width="40px" height="40px">
+<button type="button" class="btn btn-primary">Accept</button>
+<button type="button" class="btn btn-warning">Delete</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
