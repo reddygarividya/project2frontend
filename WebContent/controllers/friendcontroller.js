@@ -13,5 +13,37 @@ app.controller('FriendController',function($scope,$location,$rootScope,FriendSer
 						$location.path('/login')
 				})
 	}
+	
+	function getPendingRequests(){
+		FriendService.getPendingRequests().then(
+			function(response) {
+				$scope.pendingRequests=response.data
+			},
+			function(response) {
+
+				$rootScope.error=response.data
+
+				if(response.status==401)
+
+					$location.path('/login')
+
+			})
+			
+		
+	}
+	
+	$scope.addFriend=function(toId) {
+		FriendService.addFriend(toId).then(
+				function(response) {
+					alert('Friend request has been sent successfully')
+					getAllSuggestedUsers()
+				},
+				function(response) {
+					$rootScope.error=response.data
+					if(response.status==401)
+						$location.path('/login')
+				})
+	}
 	getAllSuggestedUsers()
+	getPendingRequests()
 })
