@@ -14,5 +14,13 @@ app.factory('FriendService',function($http) {
 	friendService.getPendingRequests=function(){
 		return $http.get("http://localhost:8181/project2backend/pendingrequests")
 	}
+	
+	friendService.acceptRequest=function(request) {
+		return $http.put("http://localhost:8181/project2backend/acceptrequest",request);
+	}
+	
+	friendService.deleteRequest=function(request) {
+		return $http.put("http://localhost:8181/project2backend/deleterequest",request)
+	}
 	return friendService;
 })
