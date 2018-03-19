@@ -22,5 +22,9 @@ app.factory('FriendService',function($http) {
 	friendService.deleteRequest=function(request) {
 		return $http.put("http://localhost:8181/project2backend/deleterequest",request)
 	}
+	
+	friendService.getAllFriends=function() {
+		return $http.get("http://localhost:8181/project2backend/friends")
+	}
 	return friendService;
 })
