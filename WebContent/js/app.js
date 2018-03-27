@@ -71,9 +71,17 @@ app.config(function($routeProvider){
 		controller:'FriendController'
 
 	})
+	.when('/chat',{
+		templateUrl:'views/chat.html',
+		controller:'ChatCtrl'
+	})
+	.when('/searchuser',{
+		templateUrl:'views/users.html',
+		controller:'UserController'
+	})
+	
 	.otherwise({
-		templateUrl:'views/home.html',
-			controller:'NotificationController'
+		templateUrl:'views/home.html'
 	})
 })
 	app.run(function($rootScope,$location,UserService,$cookieStore){
