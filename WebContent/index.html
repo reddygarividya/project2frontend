@@ -94,7 +94,7 @@ data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Friend<b clas
 <li><a href="#/chat" ng-show="loggedInUser.firstName">Chat </a></li>
  <li>
  
-<div class="navbar buttons">
+ <div class="navbar buttons" ng-show="loggedInUser.firstName!=undefined">
 <input type="text" placeholder="search user" class="navbar search" ng-model="user">
 <a href="#/searchuser" class="btn navbar-btn btn-primary pull-right" type="button" ng-click="searchUser(user)">
 <i class="fa fa-search"></i></a>
